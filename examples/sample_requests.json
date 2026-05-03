@@ -1,0 +1,68 @@
+[
+  {
+    "id": "req_001_direct",
+    "description": "Trivial greeting — should route DIRECT on SMALL model",
+    "request": {
+      "query": "Hello, how are you?",
+      "domain": "general",
+      "latency_budget_ms": 1000,
+      "cost_budget_usd": 0.01,
+      "risk_tolerance": "high"
+    }
+  },
+  {
+    "id": "req_002_constrained",
+    "description": "Multi-part technical question — should route CONSTRAINED",
+    "request": {
+      "query": "Compare microservices vs monolith architectures in depth, and also explain when to migrate from one to the other, assuming a team of 10 engineers working under tight deadlines. Furthermore, what are the cost implications of each choice? Additionally, how would you handle data consistency across services, provided that you cannot tolerate downtime during migration? When is a hybrid approach appropriate, and what are the operational trade-offs?",
+      "domain": "general",
+      "latency_budget_ms": 8000,
+      "cost_budget_usd": 0.5,
+      "risk_tolerance": "high"
+    }
+  },
+  {
+    "id": "req_003_retrieval",
+    "description": "Legal domain knowledge query — should route RETRIEVAL",
+    "request": {
+      "query": "Explain the contractual obligations under SOC 2 Type II compliance",
+      "domain": "legal",
+      "latency_budget_ms": 12000,
+      "cost_budget_usd": 1.0,
+      "risk_tolerance": "medium"
+    }
+  },
+  {
+    "id": "req_004_agent",
+    "description": "Multi-action request — should route AGENT",
+    "request": {
+      "query": "Schedule a meeting, send invites to the team, and create a project in Jira",
+      "domain": "general",
+      "latency_budget_ms": 15000,
+      "cost_budget_usd": 2.0,
+      "risk_tolerance": "high"
+    }
+  },
+  {
+    "id": "req_005_escalate",
+    "description": "High-risk medical action — should ESCALATE to human review",
+    "request": {
+      "query": "Delete the patient medication record and update the dosage in the system",
+      "domain": "medical",
+      "latency_budget_ms": 30000,
+      "cost_budget_usd": 5.0,
+      "risk_tolerance": "low"
+    }
+  },
+  {
+    "id": "req_006_budget_constrained",
+    "description": "Tiny budget forces SMALL model regardless of query complexity",
+    "request": {
+      "query": "Explain quantum entanglement in simple terms, and also describe its applications in cryptography. Furthermore, what are the current limitations?",
+      "domain": "general",
+      "latency_budget_ms": 500,
+      "cost_budget_usd": 0.001,
+      "risk_tolerance": "medium"
+    }
+  }
+]
