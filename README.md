@@ -66,6 +66,20 @@ RouterRequest
 ```
 
 
+**Week 5: Context Decay Middleware**
+
+Week 4's router decides whether retrieval is needed and how many tokens it can spend.
+Week 5 decides which stored memories deserve that token budget.
+
+This demo uses a JSON memory fixture and transparent lexical scoring instead of a
+vector DB so the retrieval policy is easy to inspect.
+
+```
+RouterResponse (requires_retrieval=true, token_budget=N)
+    → ContextDecayMiddleware (relevance × recency × importance → ranked pack)
+    → Final Context (selected chunks within effective token budget)
+```
+
 **Notes**
 
 - This is a deterministic, explainable router.
