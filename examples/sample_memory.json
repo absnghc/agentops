@@ -1,0 +1,82 @@
+[
+  {
+    "id": "mem_001",
+    "content": "Old refund policy v1: Acme Corp enterprise customers may receive automatic refunds for failed API sync issues if the outage duration exceeds 30 minutes. Superseded.",
+    "age_hours": 168,
+    "importance": 0.40,
+    "source": "policy_doc_v1",
+    "tokens": 36
+  },
+  {
+    "id": "mem_002",
+    "content": "Updated refund policy v2: Acme Corp enterprise accounts receive automatic refunds for failed API syncs lasting over 15 minutes. Supersedes v1.",
+    "age_hours": 5,
+    "importance": 0.85,
+    "source": "policy_doc_v2",
+    "tokens": 28
+  },
+  {
+    "id": "mem_003",
+    "content": "Compliance rule CR-017: Any refund over $1,000 for failed Acme Corp API requests requires dual authorization and must be logged within 24 hours.",
+    "age_hours": 200,
+    "importance": 0.95,
+    "source": "compliance_rules",
+    "tokens": 29
+  },
+  {
+    "id": "mem_004",
+    "content": "Support ticket #4821: Acme Corp reported a failed API sync on 2024-01-14 lasting 47 minutes. Root cause under investigation. Refund request pending.",
+    "age_hours": 2,
+    "importance": 0.80,
+    "source": "support_ticket_acme",
+    "tokens": 32
+  },
+  {
+    "id": "mem_005",
+    "content": "Tool result [sync_health_check, 96h ago]: All enterprise API sync jobs completed successfully. No errors detected.",
+    "age_hours": 96,
+    "importance": 0.25,
+    "source": "tool_result_stale",
+    "tokens": 24
+  },
+  {
+    "id": "mem_006",
+    "content": "Tool result [refund_eligibility_check]: Acme Corp account acme-ent-0042 has 3 failed API sync events in the past 24 hours. Refund eligibility: confirmed.",
+    "age_hours": 1,
+    "importance": 0.65,
+    "source": "tool_result_fresh",
+    "tokens": 28
+  },
+  {
+    "id": "mem_007",
+    "content": "Customer preference: Acme Corp prefers automated refund processing over manual review for API-related service credits.",
+    "age_hours": 30,
+    "importance": 0.50,
+    "source": "customer_preference",
+    "tokens": 24
+  },
+  {
+    "id": "mem_008",
+    "content": "Account activity log: user ent-7721 updated their profile avatar, display name, and notification preferences.",
+    "age_hours": 2,
+    "importance": 0.15,
+    "source": "account_activity",
+    "tokens": 22
+  },
+  {
+    "id": "mem_009",
+    "content": "Engineering update: Refactored the API sync pipeline for improved retry logic. Deployed 10 hours ago.",
+    "age_hours": 10,
+    "importance": 0.55,
+    "source": "engineering_update",
+    "tokens": 21
+  },
+  {
+    "id": "mem_010",
+    "content": "SLA rule SLA-003: Enterprise API sync outages that failed to resolve within 4 hours qualify for automatic refund credits under the SLA.",
+    "age_hours": 220,
+    "importance": 0.88,
+    "source": "sla_rule",
+    "tokens": 28
+  }
+]
