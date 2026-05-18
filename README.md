@@ -90,17 +90,29 @@ RouterResponse (requires_retrieval=true, token_budget=N)
     policy and safety systems
     feedback loops from real usage
 
+**Context Decay Middleware**
+  
+  When the router selects the retrieval strategy, the context decay middleware
+  decides which stored memories deserve the token budget. It scores each chunk
+  by lexical relevance, recency decay, and importance — then packs the
+  highest-scoring chunks into the available tokens.
+
+  RouterResponse (requires_retrieval=true, token_budget=N)
+      → ContextDecayMiddleware (relevance × recency × importance → ranked pack)
+      → Final Context (selected chunks within token budget)
+
 
 **Project Structure**
 
 ```
 agentops_runtime/
-  core/         — shared types, config, tracing utilities
-  modules/
-    router/     —  Strategy Router
-examples/       — runnable demonstrations
-tests/          — pytest unit tests
-app/            — Streamlit UI
-docs/           — design documentation
+    core/         — shared types, config, tracing utilities
+    modules/
+      router/          — Strategy Router
+      context_decay.py — Context Decay Middleware
+  examples/       — runnable demonstrations and memory fixtures
+  tests/          — pytest unit tests
+  app/            — Streamlit UI
+  docs/           — design documentation
 ```
 
